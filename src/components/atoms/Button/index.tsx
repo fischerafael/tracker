@@ -9,18 +9,10 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = ({ children, variant, ...props }: Props) => {
   if (variant === "ghost") {
-    return (
-      <GhostButton {...props} className="">
-        {children}
-      </GhostButton>
-    );
+    return <GhostButton {...props}>{children}</GhostButton>;
   }
 
-  return (
-    <MainButton {...props} className="">
-      {children}
-    </MainButton>
-  );
+  return <MainButton {...props}>{children}</MainButton>;
 };
 
 export const BaseButton = tw.button`
